@@ -38,3 +38,20 @@ data "aws_availability_zones" "region" {
     values = [data.aws_region.current.name]
   }
 }
+
+module "security_group_all_all" {
+  source = "terraform-aws-modules/security-group/aws"
+
+  name        = "All Traffic"
+  description = "Security group to allow all traffic"
+  vpc_id      = module.vpc.vpc_id
+
+  egress_rules = ["all-all"]
+
+  ingress_with_cidr_blocks = [
+    {
+      rule        = "all-all"
+      cidr_blocks = "0.0.0.0/0"
+    },
+  ]
+}
