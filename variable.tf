@@ -36,6 +36,6 @@ output "vpc_id" {
 }
 
 output "sg_all_all" {
-    description = "Security Group all-all ID"
-    value       = module.security_group_all_all.security_group_id
+  description = "Security Group all-all ID"
+  value       = module.security_group_all_all.security_group_id
 }
