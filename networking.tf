@@ -16,7 +16,7 @@ module "vpc" {
     cidrsubnet(var.vpc_cidr, 8, num)
   ]
 
-  enable_nat_gateway     = true
+  enable_nat_gateway     = false
   single_nat_gateway     = true
   one_nat_gateway_per_az = false
   enable_dns_hostnames   = true
